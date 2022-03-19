@@ -1,0 +1,390 @@
+
+/* ========Here it  login account code =================================== */
+.loggin{
+  margin: 75px;
+    width: 50%;
+    margin-left: 25rem;
+    position: absolute;
+    
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  button {
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 40%;
+      font-size: 18px;
+      background-color: #04AA6D;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  .container {
+    padding: 16px;
+  }
+  .new_account{
+      width: 40%;
+  }
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+/* =================== here is the create aboout new account================ */
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  /* Set a style for all buttons */
+  button {
+    background-color: #2155fd;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 55%;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  img.avatar {
+    width: 20%;
+    border-radius: 50%;
+    margin-bottom: 0%;
+  }
+  .name_access
+  {
+    display: flex;
+    font-size: 20px;
+    margin-left: 18rem;
+    margin-bottom: 0%;
+    position: absolute;
+  }
+  .names_access{
+    display: flex;
+    font-size: 20px;
+    margin-left: 23rem;
+    margin-bottom: 0%;
+    position: absolute;
+  }
+  .container {
+    padding: 16px;
+  }
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+    border-radius: 25px;
+  }
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+
+
+/* ==========================////////////============ */
+
+body{
+    background:rgb(250, 242, 227);
+}
+.accoun_title{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+}
+.profile{
+    width: 11%;
+    height: 12vh;
+    border-radius: 50%;
+    background-image:url(../profile_image/dog-g74222f906_1920.jpg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+.title_post{
+    border-radius: 5px;
+    width:30% ;
+    height: 5vh;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    border: none;
+    justify-content: center;
+}
+.images{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.choose_profile {
+    width: 30%;
+    height: 50vh;
+    display: flex;
+    border-radius: 10px;
+    margin-top: 30px;
+    align-items: center;
+    text-align: center;
+    background: rgb(206, 241, 255);
+   align-items: center;
+   justify-content: center;
+}
+.choose{
+    background: blue;
+    width: 25%;
+}
+.click_post,.click_edit{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    width: 30%;
+    height: 5vh;
+    margin-top: 25px;
+    color: wheat;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.click_post{
+    background:rgb(22, 22, 250);
+}
+.click_edit{
+    background: rgba(245, 216, 53, 0.959);
+    color: rgb(37, 37, 37);
+}
+
+
+
+/* resutl_from_adding_posting chard=== */
+.card{
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    background: rgb(222, 250, 255);
+    border-radius: 10px;
+}
+
+.card-body{
+    width: 100%;
+    position: static;
+}
+.add_font{
+    display: flex;
+    margin-left: 38rem;
+    margin-bottom: 20rem;
+    position: absolute;
+}
+.card_link{
+font-size: 18px;
+}
+.text_card .card_text{
+    font-size: 19px;
+}
+.both_account{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+.imagess{
+    width: 65%;
+    height: 12vh;
+    margin-top: 6px;
+    margin-left: 10px;
+    border-radius: 80px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.name_accoount{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-right: 15px;
+    font-size: 27px;
+    margin-bottom: 0%;
+}
+.datetime{
+    margin-top:4px;
+    font-size: 15px;
+    margin-left: 5px;
+    position: absolute;
+}
+.acount{
+    width: 60%;
+    height: 14vh;
+    border-radius: 50px;
+}
+
+.adding{
+    margin: 10px;
+}
+.card_text{
+    margin-left: 12px;
+    font-size: 18px;
+    margin-top: 0%;
+}
+.Image_add{
+    width: 98%;
+    margin: auto;
+    display: flex;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+}
+.like_comment_share{
+    width: 98%;
+    display: flex;
+    margin: auto;
+    height: 5vh;
+    border-radius: 5px;
+    background: rgb(209, 243, 243);
+    justify-content: space-evenly;
+}
+.likes,
+.comments,
+.shares{
+    margin: auto;
+    display: flex;
+    font-size: 23px;
+    margin-top: 5px;
+}
+.like_number,
+.comment_number,
+.share_number{
+    margin-left: 15px;
+}
+
+/* ======================== style add comment to user====== */
+
+.commentners{
+  display: flex;
+  width: 98%;
+  margin: auto;
+  border-radius:none;
+}
+.text_comment{
+  width: 90%;
+  font-size: 15px;
+  
+}
+.button_comment{
+  width: 10%;
+  height: 5vh;
+}
+
