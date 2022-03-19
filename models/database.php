@@ -1,5 +1,2 @@
 <?php
-$database = new PDO ('mysql:host=localhost;dbname=facebooks','root','');
-/**
- * Your code here 
- */
+$database = new PDO ('mysql:host=localhost;dbname=facebooks', 'root', '');
