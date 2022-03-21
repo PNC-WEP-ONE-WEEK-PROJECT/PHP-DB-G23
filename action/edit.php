@@ -1,3 +1,4 @@
+
 <?php
 require_once("../models/post.php");
 
@@ -13,8 +14,5 @@ if(!empty($description)){
     header("location: ../mixs/mix.php");
 
 }
-
-
-
 
 ?>

@@ -1,15 +1,15 @@
 <?php
 require_once 'database.php';
-function createPost($post,$image)
+// ----------------------------- insert text and photo add to post-----------
+function createPost($post_description,$image)
 {
     global $database;
-    $post_description=$_POST['post_description'];
-    $post_image=$image['image']['name'];
-    $statement=$database->prepare("insert into posts (post_description,post_image) values (:post_description,:post_image)");
-    $statement->execute([':post_description' => $post_description,':post_image' => $post_image]);
+    $statement=$database->prepare("INSERT INTO posts (post_description,post_image) VALUES(:post_description,:post_image)");
+    $statement->execute([':post_description' => $post_description,':post_image' => $image]);
     return $statement->fetch() >0;
 }
 
+// -------------------------- update post to post-------------
 function udatePost($post_description,$post_id,$post_image)
 {
     global $database;
@@ -20,32 +20,68 @@ function udatePost($post_description,$post_id,$post_image)
     return $statement;
 }
 
+// ================ delet post fro post===========
 function deletePost($post_id)
 {
     global $database;
-    $statement=$database->prepare("delete from posts where post_id = :post_id");
+    $statement=$database->prepare("DELETE FROM posts WHERE post_id = :post_id");
     $statement->execute(['post_id' => $post_id,]);
     return $statement->fetch() >0;
-    
-
-
 }
 
 function getAllPost()
 {
     global $database;
-    $statement=$database->prepare("select * from posts order by post_id");
+    $statement=$database->prepare("SELECT * FROM posts ORDER BY post_id DESC");
     $statement->execute();
     return $statement->fetchAll();
-    
 }
-
+// ----------------------------- DISPLAY POST TO BROWSWER--------------
 function getbyId($id){
-
     global $database;
-    $statement = $database->prepare("SELECT * from posts where post_id=:id");
+    $statement = $database->prepare("SELECT * FROM posts WHERE post_id=:id");
     $statement->execute([':id'=>$id]);
     return $statement->fetch();
 }
+// -------------------------------INSERT COMMENT TO USER POST ---------------------
+function addcomment($comment_body){
+    global $database;
+    $statement = $database->prepare('INSERT INTO comments (comment_body) VALUES(:comment_body)');
+    $statement->execute([
+        ':comment_body'=>$comment_body,
+        // ':comment_number'=>$comment_number,
+        // ':user_id'=>$user_id,
+        // ':post_id'=>$post_id,
+       ]);
+}
 
+// -------------------------SELECT COMMENT FOR COMMENT TABLE-----------------
+function getComment(){
+    global $database;
+    $statement=$database->prepare('SELECT * FROM comments ORDER BY comment_id DESC');
+    $statement->execute();
+    return $statement->fetchAll();
+}
+
+
+
+// ---------------------------- LOGIN AND CHECK USER------------------
+function userLogin($userName,$passwords)
+{
+    global $database;
+    $statement=$database->prepare("INSERT INTO users (first_name,passwords) VALUES(:first_name,:passwords)");
+    $statement->execute([':first_name'=>$userName,':passwords'=>$passwords]);
+    return $statement->fetch()>0;
+}
+
+
+// ------------------------------CREATE USER INTO USER---------------------
+function adduser($first_name,$last_name,$email,$passwords,$gender){
+
+    global $database;
+    $statement = $database->prepare("INSERT INTO users(first_name,last_name, email, passwords, gender)
+    VALUES (:first_name,:last_name,:email,:passwords,:gender)");
+    $statement->execute([':first_name' => $first_name, ':last_name' => $last_name,':passwords'=>$passwords,':email'=>$email, ':gender'=>$gender,]);
+    return $statement->fetchAll();
+}
 

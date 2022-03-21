@@ -1,30 +1,50 @@
-
-
-
-
 <?php
-
-require_once '../models/test.php';
 require_once '../templates/header.php';
+require_once '../models/post.php';
 ?>
+<a href="../index.php"><i class="fas fa-sign-out-alt fa-2x icon_stylser"></i></a>
+<div class="cirle">
+    <div class="filer">
+        <img class="profiler" src="../profile_image//dog-g74222f906_1920.jpg" alt="">
+        <span class="myname">Heng-Narong</span>
+        <div class="body_text">
+            <h5>Your old friend search</h5>
+            <input class="text_search" type="text" placeholder="Search friends here">
+            
 
-<div class="container" mt-3>
+        </div>
+    </div>
+    <div class="detail">
+        <input class="mind_text" type="text" placeholder="What is your mind? / Post" >
+        <a href="../views/post_form.php"><i class="fas far fa-share-square fa-2x"></i></a>
+    </div>
+    <table>
+        <tr>
+            <th>Video/Post</th>
+        </tr>
+    </table>
+</div>
+​​<div class="table_mind">Here is the result that you have post</div>
+
+
+<div class="containerS" mt-3>
     <?php
     $posts=getAllPost();
-    // print_r($posts);
     foreach($posts as $post):
-        // echo $post['post_id'];
     ?>
     <div class="card">
         <div class="card-body">
-
             <div class="both_account">
                 <div class="pict_profile">
                     <img class="imagess" src="../profile_image/dog-g74222f906_1920.jpg" alt="">
                 </div>
                 <div class="acount">
                     <span class="name_accoount">Heng-Naong</span>
-                    <h6 class="datetime"><?=$post['post_date']?></h6>
+                    <a class="fonts_more" href=""><i class="fas fas fa-ellipsis-h fa-2x"></i></a>
+                    <?php
+                        $date = date_create($post['post_date']);
+                        ?>
+                        <p class="datetime"><?= date_format($date, '\ D,j,M,Y'); ?></p>
                 </div>
             </div>
             <div class="text_card">
@@ -46,15 +66,25 @@ require_once '../templates/header.php';
                     <div class="share_number">12</div>
                 </div>
 
-                <!-- //====add comment to user=========== -->
-                
+                <!-- //====add comment to user poat =========== -->
             </div>
+
             <div class="commentners">
-                <input class="text_comment" type="text"  placeholder="Add comment">
-                <button class="button_comment" >Comment</button>
+                <form action="#" method="post" class="write_comment">
+                    <textarea class="text_comment" type="text"  placeholder="Add comment" name="comment_body"></textarea>
+                    <button class="button_comment">Done</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Display comment to post  -->
+            <div class="commenters">
+                <span>Display comment here.</span>
             </div>
         </div>
-    </div>
-    <?php endforeach; ?>
+    <?php endforeach;?>
     <!-- ????????????????? -->
 </div>
+<?php
+require_once '../templates/footer.php';
+?>
+
