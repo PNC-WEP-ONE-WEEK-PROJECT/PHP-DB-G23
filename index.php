@@ -77,7 +77,6 @@ require_once 'models/post.php';
                 value="2018-07-22"
                 min="2018-01-01" max="2018-12-31">
             </div>
-
             <button type="submit">Create</button>
         </div>
     </form>

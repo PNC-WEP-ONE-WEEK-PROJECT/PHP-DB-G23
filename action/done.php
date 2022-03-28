@@ -1,7 +1,19 @@
 <?php
 require_once '../templates/header.php';
 require_once '../models/post.php';
+$getComment=getComment();
 ?>
+    <div class="bar">
+        <div class="bar_fornt">
+             <a href=""><i class="fas fa-home fa-2x"></i></a>
+            <a href=""><i class="fas fas fa-users fa-2x"></i></a>
+            <a href=""><i class="fas fas fa-video fa-2x"></i></a>
+            <a href=""><i class="fas fas fa-shopping-cart fa-2x"></i></a>
+            <a href=""><i class="fas fas fa-bell fa-2x"></i></a>
+            <a href=""><i class="fas fas fa-bars fa-2x"></i></a>
+        </div>
+    </div>
+    <hr>
 <a href="../index.php"><i class="fas fa-sign-out-alt fa-2x icon_stylser"></i></a>
 <div class="cirle">
     <div class="filer">
@@ -11,7 +23,6 @@ require_once '../models/post.php';
             <h5>Your old friend search</h5>
             <input class="text_search" type="text" placeholder="Search friends here">
             
-
         </div>
     </div>
     <div class="detail">
@@ -70,16 +81,20 @@ require_once '../models/post.php';
             </div>
 
             <div class="commentners">
-                <form action="#" method="post" class="write_comment">
+                <form action="../views/comment.php" method="post" class="write_comment">
                     <textarea class="text_comment" type="text"  placeholder="Add comment" name="comment_body"></textarea>
-                    <button class="button_comment">Done</button>
-                    </div>
+                    <button class="buttonss"><i class="fas fa-paper-plane commentese"></i></button>
                 </form>
             </div>
-            <!-- Display comment to post  -->
-            <div class="commenters">
-                <span>Display comment here.</span>
             </div>
+            <!-- Display comment to post  -->
+            <?php
+            foreach($getComment as $cmt):
+            ?>
+            <div class="commenterrs">
+                <span><?=$cmt['comment_body']?></span>
+            </div>
+            <?php endforeach?>
         </div>
     <?php endforeach;?>
     <!-- ????????????????? -->

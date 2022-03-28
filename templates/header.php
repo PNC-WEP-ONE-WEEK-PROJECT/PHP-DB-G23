@@ -11,22 +11,24 @@
     <link rel="stylesheet" href="../css/style.css">
     <body>
     <html>    
-    
     <div class="heardes">
         <div class="fonters">
             <div class="facebookss">
                 <i class="fab fa-facebook fa-4x icon_styl"></i>
-                <h2 class="name_facebook">Facebook</h2>
+                <h2 class="name_facebook">facebook</h2>
             </div>
             <div class="re_search">
+                <!-- <a href="../logins/login.php"><i class="fas fa-user-circle fa-2x con"></i></a> -->
                 <input class="re_find" type="inder" placeholder="  Find your account here">
-                <button class="submit">Search</button>
+                <button class="submit"><a class="con" href="">Search</a></button>
             </div>
             <div class="morefonsts">
                 <i class="fas fa-user-friends fa-2x icon_styls"></i>
             </div>
 
         </div>
+        
+    </div>
     </div>
     
 

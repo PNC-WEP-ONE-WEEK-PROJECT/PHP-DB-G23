@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="add_text">
-                <a class="adding" href="edit_view.php?post_id= "<? $post['post_id'] ?>" class="card-link"><i class="fas fas far fa-edit fa-2x"></i></a>
+                <a class="adding" href="edit_view.php?post_id= "<?= $post['post_id'] ?>" class="card-link"><i class="fas fas far fa-edit fa-2x"></i></a>
                 <a class="adding" href="action/delete.php?post_id=<?= $post['post_id'] ?>" class="card-link"><i class="fa fas fa-trash fa-2x"></i></a>
             </div>
             <div class="text_card">

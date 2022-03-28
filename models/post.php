@@ -54,7 +54,6 @@ function addcomment($comment_body){
         // ':post_id'=>$post_id,
        ]);
 }
-
 // -------------------------SELECT COMMENT FOR COMMENT TABLE-----------------
 function getComment(){
     global $database;
@@ -62,8 +61,6 @@ function getComment(){
     $statement->execute();
     return $statement->fetchAll();
 }
-
-
 
 // ---------------------------- LOGIN AND CHECK USER------------------
 function userLogin($userName,$passwords)
@@ -74,14 +71,14 @@ function userLogin($userName,$passwords)
     return $statement->fetch()>0;
 }
 
-
 // ------------------------------CREATE USER INTO USER---------------------
 function adduser($first_name,$last_name,$email,$passwords,$gender){
-
     global $database;
     $statement = $database->prepare("INSERT INTO users(first_name,last_name, email, passwords, gender)
     VALUES (:first_name,:last_name,:email,:passwords,:gender)");
     $statement->execute([':first_name' => $first_name, ':last_name' => $last_name,':passwords'=>$passwords,':email'=>$email, ':gender'=>$gender,]);
     return $statement->fetchAll();
 }
+
+
 

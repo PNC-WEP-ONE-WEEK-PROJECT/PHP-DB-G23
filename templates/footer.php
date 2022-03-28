@@ -1,6 +1,6 @@
 
 
 </body>
-<script src="myscripts.js"></script>
+<script src="../js/app.js"></script>
 </html>
 

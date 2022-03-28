@@ -6,13 +6,6 @@ require_once '../models/post.php';
 if ($_SERVER['REQUEST_METHOD'] =="POST")
     addUserInput($userName,$passwords);
 
-
 ?>
 
-
-
-<h1>Hello world</h1>
-<h2>Hello world2</h2>
-
-<h3>Hello world3</h3>
 
